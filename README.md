@@ -86,3 +86,53 @@ docker-compose up -d
 ```
 
 ---
+
+## 开发计划与任务拆分
+
+为更高效地推进项目开发，现将主要任务拆分如下：
+
+1. **监听模块开发**
+   - 网易云监听实现（internal/watcher/netease.go）
+   - QQ 音乐监听实现（internal/watcher/qqmusic.go）
+   - MeTube 监听实现（internal/watcher/metube.go）
+
+2. **解锁模块开发**
+   - UM 解锁实现（internal/unlocker/umunlock.go）
+   - 测试用解锁实现（internal/unlocker/dummy.go）
+
+3. **上传模块开发**
+   - WebDAV 上传实现（internal/uploader/webdav.go）
+   - 测试用上传实现（internal/uploader/dummy.go）
+
+4. **清理模块开发**
+   - 删除加密文件实现（internal/cleaner/cleaner.go）
+
+5. **核心应用逻辑**
+   - 应用协调与管理（internal/app.go）
+
+6. **配置与工具**
+   - 配置加载与管理（config/config.go）
+   - 公共工具函数（internal/utils/utils.go）
+
+7. **主程序入口**
+   - 程序初始化与启动（cmd/music-unlocker/main.go）
+
+---
+
+## 里程碑计划
+
+| 阶段       | 任务内容               | 预计完成时间  |
+|------------|------------------------|--------------|
+| 阶段一     | 监听模块基础实现       | 2 周         |
+| 阶段二     | 解锁与上传模块开发     | 3 周         |
+| 阶段三     | 清理模块与核心逻辑完善 | 1 周         |
+| 阶段四     | 配置、工具及主程序完善 | 1 周         |
+| 阶段五     | 测试、文档及发布       | 1 周         |
+
+---
+
+## 贡献指南
+
+欢迎提交 PR 和 Issue，详细说明功能需求或问题描述。
+
+---
