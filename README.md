@@ -103,3 +103,30 @@ NAS 音乐助手
 
 - 应用核心，负责协调监听、解锁、清理、上传流程。
 - 采用依赖注入，将各模块实例传入，解耦合。
+
+---
+
+## Docker 支持
+
+### Dockerfile
+
+项目提供 Dockerfile，方便构建容器镜像，快速部署。
+
+### docker-compose.yml
+
+提供 docker-compose 配置示例，支持一键启动服务及依赖。
+
+### 使用示例
+
+```bash
+# 构建镜像
+docker build -t music-unlocker .
+
+# 运行容器
+docker run -d --name music-unlocker music-unlocker
+
+# 使用 docker-compose 启动
+docker-compose up -d
+```
+
+---
