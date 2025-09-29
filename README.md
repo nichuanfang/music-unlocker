@@ -13,47 +13,47 @@ NAS 音乐助手
 
 ## 目录结构
 
-```
+```bash
 /music-unlocker
 │
 ├── cmd/
-│   └── music-unlocker/           # 主程序入口
-│       └── main.go
+│ └── music-unlocker/ # 主程序入口
+│ └── main.go
 │
-├── config/                       # 配置相关
-│   └── config.go                 # 配置加载与管理
+├── config/ # 配置相关
+│ └── config.go # 配置加载与管理
 │
-├── internal/                     # 内部实现，禁止外部引用
-│   ├── watcher/                  # 监听模块
-│   │   ├── watcher.go            # 监听器接口及管理
-│   │   ├── netease.go            # 网易云监听实现
-│   │   ├── qqmusic.go            # QQ音乐监听实现
-│   │   └── metube.go             # MeTube监听实现
-│   │
-│   ├── unlocker/                 # 解锁模块
-│   │   ├── unlocker.go           # 解锁器接口定义
-│   │   ├── umunlock.go           # UM解锁实现
-│   │   └── dummy.go              # 测试用解锁实现（空操作）
-│   │
-│   ├── cleaner/                  # 清理模块（删除加密文件）
-│   │   └── cleaner.go
-│   │
-│   ├── uploader/                 # 上传模块
-│   │   ├── uploader.go           # 上传器接口定义
-│   │   ├── webdav.go             # WebDAV上传实现
-│   │   └── dummy.go              # 测试用上传实现（空操作）
-│   │
-│   ├── model/                    # 业务模型定义（如文件信息结构体等）
-│   │   └── file.go
-│   │
-│   ├── utils/                    # 工具函数（日志、文件操作等）
-│   │   └── utils.go
-│   │
-│   └── app.go                   # 应用核心逻辑，协调各模块
+├── internal/ # 内部实现，禁止外部引用
+│ ├── watcher/ # 监听模块
+│ │ ├── watcher.go # 监听器接口及管理
+│ │ ├── netease.go # 网易云监听实现
+│ │ ├── qqmusic.go # QQ 音乐监听实现
+│ │ └── metube.go # MeTube 监听实现
+│ │
+│ ├── unlocker/ # 解锁模块
+│ │ ├── unlocker.go # 解锁器接口定义
+│ │ ├── umunlock.go # UM 解锁实现
+│ │ └── dummy.go # 测试用解锁实现（空操作）
+│ │
+│ ├── cleaner/ # 清理模块（删除加密文件）
+│ │ └── cleaner.go
+│ │
+│ ├── uploader/ # 上传模块
+│ │ ├── uploader.go # 上传器接口定义
+│ │ ├── webdav.go # WebDAV 上传实现
+│ │ └── dummy.go # 测试用上传实现（空操作）
+│ │
+│ ├── model/ # 业务模型定义（如文件信息结构体等）
+│ │ └── file.go
+│ │
+│ ├── utils/ # 工具函数（日志、文件操作等）
+│ │ └── utils.go
+│ │
+│ └── app.go # 应用核心逻辑，协调各模块
 │
-├── scripts/                      # 辅助脚本（构建、部署、解锁工具包装等）
+├── scripts/ # 辅助脚本（构建、部署、解锁工具包装等）
 │
-├── docs/                         # 文档
+├── docs/ # 文档
 │
 ├── go.mod
 └── go.sum
