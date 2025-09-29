@@ -62,50 +62,6 @@ NAS 音乐助手
 
 ---
 
-## 设计说明
-
-### 1. cmd/music-unlocker/main.go
-
-- 程序入口，负责初始化配置、依赖注入、启动应用。
-
-### 2. config/
-
-- 统一管理配置文件加载（支持 JSON/YAML/ENV 等），方便不同环境配置。
-
-### 3. internal/watcher/
-
-- 监听模块定义`Watcher`接口，不同音乐平台实现各自监听逻辑。
-- 方便后续新增其他音乐平台，只需实现接口并注册。
-
-### 4. internal/unlocker/
-
-- 解锁模块定义`Unlocker`接口，支持多种解锁方式。
-- 目前实现 UM 解锁，未来可扩展其他解锁工具。
-
-### 5. internal/cleaner/
-
-- 负责删除加密音乐文件，解锁失败时调用。
-
-### 6. internal/uploader/
-
-- 上传模块定义`Uploader`接口，支持多种上传方式。
-- 目前实现 WebDAV 上传，未来可扩展 FTP、SFTP 等。
-
-### 7. internal/model/
-
-- 定义业务相关结构体，如音乐文件信息、状态等。
-
-### 8. internal/utils/
-
-- 公共工具函数，如日志封装、文件操作辅助函数。
-
-### 9. internal/app.go
-
-- 应用核心，负责协调监听、解锁、清理、上传流程。
-- 采用依赖注入，将各模块实例传入，解耦合。
-
----
-
 ## Docker 支持
 
 ### Dockerfile
